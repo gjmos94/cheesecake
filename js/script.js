@@ -1,0 +1,10 @@
+// Smooth scroll to section
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+// Example: log a message
+console.log("Mom's Cheesecakes website loaded!");
