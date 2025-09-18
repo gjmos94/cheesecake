@@ -14,10 +14,20 @@ body {
 
 /* Header */
 header {
-  background: #ef362c;
-  color: white;
+  display: flex;
+  align-items: center;   /* vertically center logo & text */
+  justify-content: space-between; /* spreads out title and nav */
   padding: 1rem;
-  text-align: center;
+  background: #8eedd8;
+  color: white;
+}
+
+header img {
+  margin-right: 15px; /* space between logo and title */
+}
+
+header h1 {
+  font-size: 2rem;
 }
 
 header nav ul {
@@ -47,7 +57,7 @@ header nav a {
 .hero button {
   margin-top: 20px;
   padding: 10px 20px;
-  background: #f67280;
+  background: #c72909;
   color: white;
   border: none;
   cursor: pointer;
@@ -73,8 +83,19 @@ section {
 
 /* Footer */
 footer {
-  background: #355c7d;
+  background: #a57224;
   color: white;
   text-align: center;
   padding: 10px;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+}
+
+.banner {
+  height: 120px; /* adjust thickness of banner */
+  background: url("../images/cheesebanner.png") repeat-x;
+  background-size: contain; /* makes the pattern fit nicely */
 }
