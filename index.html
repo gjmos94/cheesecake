@@ -1,67 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mom's Cheesecakes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Gourmet homemade cheesecakes — order online or contact us for custom orders." />
+  <title>Gourmet Cheesecakes</title>
+
+  <!-- Google Fonts: Playfair Display (headings) + Montserrat (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Preload the main hero image to reduce first-paint flicker -->
+  <link rel="preload" as="image" href="images/cheese1.png">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-  <div class="branding">
-    <img src="images/crlogo.png" style="width:120px;height:120px;">
-    <h1>Gourmet Cheesecakes</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="banner"> </div>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2 style="color: #c72909;">Homemade Cheesecakes with Love</h2>
-    <p style="color: #c72909;">Delicious, fresh, and baked to perfection.</p>
-    <button onclick="scrollToSection('menu')">See Our Menu</button>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We’ve been baking cheesecakes for friends, family, and happy customers for years. Every cheesecake is made with care and fresh ingredients.</p>
-  </section>
-
-  <!-- Menu Section -->
-  <section id="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-item">
-      <img src="images/cheese2.png" alt="Classic Cheesecake" />
-      <h3>Classic Cheesecake</h3>
-      <p>Creamy and smooth, topped with fresh strawberries.</p>
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <img src="images/crlogo.png" alt="Gourmet Cheesecakes logo" class="logo">
+      <h1 class="site-title">Gourmet Cheesecakes & Baked Goods</h1>
     </div>
-    <div class="menu-item">
-      <img src="images/cheese1.png" alt="Chocolate Cheesecake" />
-      <h3>Strawberry Cheesecake</h3>
-      <p>Rich, decadent, and perfect for chocolate lovers.</p>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@momcheesecake.com">info@momcheesecake.com</a></p>
-    <p>Phone: (123) 456-7890</p>
-  </section>
+    <!-- Mobile nav toggle -->
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+      ☰
+    </button>
 
-  <!-- Footer -->
+    <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main Navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="banner" aria-hidden="true"></div>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Featured cheesecakes">
+      <!-- background layers (aria-hidden) -->
+      <div class="hero-bg bg1" aria-hidden="true"></div>
+      <div class="hero-bg bg2" aria-hidden="true"></div>
+      <div class="hero-bg bg3" aria-hidden="true"></div>
+
+      <!-- overlay for text readability -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h2>Homemade Cheesecakes with Love</h2>
+        <p>Delicious, fresh, and baked to perfection.</p>
+        <button class="btn primary" id="see-menu">See Our Menu</button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We’ve been baking cheesecakes for friends, family, and happy customers for years. Every cheesecake is made with care and fresh ingredients.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+      <h2>Our Menu</h2>
+
+      <div class="menu-grid">
+        <article class="menu-item">
+          <img src="images/cheese2.png" alt="Classic Cheesecake" loading="lazy">
+          <h3>Classic Cheesecake</h3>
+          <p>The all-time favorite.</p>
+        </article>
+
+        <article class="menu-item">
+          <img src="images/cheese1.png" alt="Strawberry Cheesecake" loading="lazy">
+          <h3>Strawberry Cheesecake</h3>
+          <p>Fresh berries and cream.</p>
+        </article>
+
+        <article class="menu-item">
+          <img src="images/cheese3.png" alt="Chocolate Cheesecake" loading="lazy">
+          <h3>Chocolate Cheesecake</h3>
+          <p>Rich and decadent.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:info@momcheesecake.com">info@momcheesecake.com</a></p>
+      <p>Phone: (123) 456-7890</p>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 Mom's Cheesecakes</p>
+    <p>&copy; <span id="year"></span> Gourmet Cheesecakes</p>
   </footer>
 
   <script src="js/script.js"></script>

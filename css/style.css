@@ -1,101 +1,149 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --bg: #f4e0aa;
+  --accent: #8eedd8;
+  --choco: #674444;
+  --muted: #333;
+  --btn: #c72909;
+  --max-width: 1100px;
+  --gap: 1rem;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  background-color: #f4e0aa;
-  color: #333;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--choco);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
 }
+
+/* skip link */
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  background:#000;color:#fff;padding:.5rem .75rem;border-radius:4px;
+}
+.skip-link:focus{left:1rem;top:1rem;z-index:9999}
 
 /* Header */
-header {
-  display: flex;
-  align-items: center;   /* vertically center logo & text */
-  justify-content: space-between; /* spreads out title and nav */
-  padding: 1rem;
-  background: #8eedd8;
-  color: white;
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1rem;
+  background:var(--accent);
+  color:var(--muted);
+  gap:1rem;
+}
+.branding{display:flex;align-items:center;gap:.75rem}
+.logo{
+  width:120px;
+  height:120px;
+  border-radius:16px;
+  
+  display:block;
+}
+.site-title{
+  font-family:"Playfair Display", serif;
+  font-weight:300;
+  color:var(--muted);
+  font-size:clamp(1.6rem, 3vw, 2.4rem);
 }
 
-header img {
-  margin-right: 15px; /* space between logo and title */
+/* Nav */
+.menu-toggle{
+  display:none;
+  background:transparent;border:none;font-size:1.6rem;cursor:pointer;
+}
+.main-nav ul{display:flex;gap:1.25rem;list-style:none}
+.main-nav a{color:var(--muted);text-decoration:none;font-family:"Playfair Display", serif;font-weight:300;font-size:1rem}
+
+/* Banner (scrolling) */
+.banner{
+  height:100px;
+  background:url("../images/cheesebanner.png") repeat-x;
+  background-size:contain;
+  animation:scrollBanner 40s linear infinite;
+}
+@keyframes scrollBanner{from{background-position:0 0}to{background-position:100% 0}}
+
+/* Hero */
+.hero{
+  position:relative;
+  height:clamp(340px, 40vh, 480px);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin:0 auto;
 }
 
-header h1 {
-  font-size: 2rem;
+/* bg layers */
+.hero-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:translateZ(0);
+  animation:fadeSlideshow 15s linear infinite;
+  will-change:opacity;
+}
+.hero-bg.bg1{background-image:url("../images/cheese1.png");animation-delay:0s}
+.hero-bg.bg2{background-image:url("../images/cheese2.png");animation-delay:5s}
+.hero-bg.bg3{background-image:url("../images/cheese3.png");animation-delay:10s}
+
+/* overlay for contrast */
+.hero-overlay{
+  position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.16));z-index:1;
 }
 
-header nav ul {
-  list-style: none;
-  margin-top: 0.5rem;
+/* hero content */
+.hero-content{position:relative;z-index:2;color:#fff;padding:1rem}
+.hero-content h2{
+  font-family:"Playfair Display", serif;
+  font-weight:300;
+  font-size:clamp(1.6rem, 3.4vw, 2.2rem);
+  letter-spacing:.6px;
+  margin-bottom:.5rem;
+}
+.hero-content p{
+  font-family:"Montserrat",sans-serif;
+  font-weight:300;
+  font-size:clamp(1rem, 2.2vw, 1.15rem);
+  margin-bottom:1rem;
 }
 
-header nav ul li {
-  display: inline;
-  margin: 0 10px;
+/* buttons */
+.btn{font-family:inherit;padding:.6rem 1rem;border-radius:6px;border:none;cursor:pointer}
+.btn.primary{background:var(--btn);color:white}
+
+/* layout sections */
+section{padding:3.5rem 1rem;text-align:center}
+.menu-grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.menu-item{width:260px}
+.menu-item img{width:100%;border-radius:10px;display:block;object-fit:cover}
+
+/* footer */
+footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
+
+/* Animations */
+@keyframes fadeSlideshow{
+  0%{opacity:0}
+  8%{opacity:1}
+  33%{opacity:1}
+  41%{opacity:0}
+  100%{opacity:0}
 }
 
-header nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+/* reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .banner{animation:none}
+  .hero-bg{animation:none;opacity:1}
 }
 
-/* Hero Section */
-.hero {
-  background: url("../images/cheesecake-hero.jpg") no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #c72909;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/* Sections */
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.menu-item {
-  display: inline-block;
-  width: 250px;
-  margin: 20px;
-}
-
-.menu-item img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* Footer */
-footer {
-  background: #a57224;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-.branding {
-  display: flex;
-  align-items: center;
-}
-
-.banner {
-  height: 120px; /* adjust thickness of banner */
-  background: url("../images/cheesebanner.png") repeat-x;
-  background-size: contain; /* makes the pattern fit nicely */
+/* Responsive nav */
+@media (max-width:820px){
+  .main-nav{position:absolute;right:1rem;top:100%;background:var(--bg);box-shadow:0 8px 24px rgba(0,0,0,.12);display:none;border-radius:8px;padding:.5rem}
+  .main-nav ul{flex-direction:column;gap:.5rem}
+  .menu-toggle{display:block}
+  .main-nav.open{display:block}
 }
