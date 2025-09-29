@@ -1,55 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Metadata about the page -->
+  <meta charset="utf-8" /> <!-- Character encoding for text -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Makes site responsive -->
   <meta name="description" content="Gourmet homemade cheesecakes — order online or contact us for custom orders." />
   <title>Gourmet Cheesecakes</title>
 
-  <!-- Google Fonts: Playfair Display (headings) + Montserrat (body) -->
+  <!-- Google Fonts for headings and body text -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Preload the main hero image to reduce first-paint flicker -->
+
+  <!-- Preload hero image so it loads faster on first paint -->
   <link rel="preload" as="image" href="images/cheese1.png">
 </head>
 <body>
-  <!-- Skip link for keyboard users -->
+  <!-- Skip navigation link (for keyboard/screen reader users) -->
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- HEADER: Site branding + navigation -->
   <header class="site-header" role="banner">
     <div class="branding">
+      <!-- Site logo -->
       <img src="images/crlogo.png" alt="Gourmet Cheesecakes logo" class="logo">
+      <!-- Site title -->
       <h1 class="site-title">Gourmet Cheesecakes & Baked Goods</h1>
     </div>
 
-    <!-- Mobile nav toggle -->
+    <!-- Button for toggling mobile nav menu -->
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
-      ☰
+      
     </button>
 
+    <!-- Main navigation links -->
     <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main Navigation">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li> <!-- Scrolls to About section -->
+        <li><a href="#menu">Menu</a></li> <!-- Scrolls to Menu section -->
+        <li><a href="#contact">Contact</a></li> <!-- Scrolls to Contact section -->
       </ul>
     </nav>
   </header>
 
+  <!-- Decorative banner area (probably styled with CSS background) -->
   <div class="banner" aria-hidden="true"></div>
 
+  <!-- MAIN CONTENT -->
   <main id="main">
-    <!-- Hero Section -->
+
+    <!-- HERO SECTION: Big intro with background + call-to-action -->
     <section class="hero" aria-label="Featured cheesecakes">
-      <!-- background layers (aria-hidden) -->
+      <!-- Layered background images (hidden from screen readers) -->
       <div class="hero-bg bg1" aria-hidden="true"></div>
       <div class="hero-bg bg2" aria-hidden="true"></div>
       <div class="hero-bg bg3" aria-hidden="true"></div>
 
-      <!-- overlay for text readability -->
+      <!-- Overlay for contrast (darkens background so text is readable) -->
       <div class="hero-overlay" aria-hidden="true"></div>
 
+      <!-- Text + button -->
       <div class="hero-content">
         <h2>Homemade Cheesecakes with Love</h2>
         <p>Delicious, fresh, and baked to perfection.</p>
@@ -57,49 +68,159 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT SECTION -->
     <section id="about">
       <h2>About Us</h2>
       <p>We’ve been baking cheesecakes for friends, family, and happy customers for years. Every cheesecake is made with care and fresh ingredients.</p>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu">
-      <h2>Our Menu</h2>
+    <!-- MENU SECTION -->
+    <section id="menu" class="menu-section">
+      <div class="menu-grid">
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+
+      </div>
 
       <div class="menu-grid">
-        <article class="menu-item">
-          <img src="images/cheese2.png" alt="Classic Cheesecake" loading="lazy">
-          <h3>Classic Cheesecake</h3>
-          <p>The all-time favorite.</p>
-        </article>
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      
+      </div>
 
-        <article class="menu-item">
-          <img src="images/cheese1.png" alt="Strawberry Cheesecake" loading="lazy">
-          <h3>Strawberry Cheesecake</h3>
-          <p>Fresh berries and cream.</p>
-        </article>
+      <div class="menu-grid">
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      </div>
 
-        <article class="menu-item">
-          <img src="images/cheese3.png" alt="Chocolate Cheesecake" loading="lazy">
-          <h3>Chocolate Cheesecake</h3>
-          <p>Rich and decadent.</p>
-        </article>
+      <div class="menu-grid">
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      </div>
+
+      <div class="menu-grid">
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
+      
+        <!-- Card -->
+        <a href="menu1.html" class="menu-card">
+          <div class="menu-info">
+            <h3>Peach Perfect with Raspberry Drizzle</h3>
+            <p>Peach Cheesecake Swirled with Peaches, Finished with Raspberry Sauce</p>
+          </div>
+          <div class="menu-image">
+            <img src="images/cheese1.png" alt="Peach Cheesecake" />
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT SECTION -->
     <section id="contact">
       <h2>Contact Us</h2>
+      <!-- Email link -->
       <p>Email: <a href="mailto:info@momcheesecake.com">info@momcheesecake.com</a></p>
-      <p>Phone: (123) 456-7890</p>
+      <!-- Phone number -->
+      <p>Phone: (956) 562-1674</p>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; <span id="year"></span> Gourmet Cheesecakes</p>
+    <p>&copy; <span id="year"></span> Bakehouse Reserve</p>
   </footer>
 
+  <!-- JavaScript file for interactions (menu toggle, dynamic year, etc.) -->
   <script src="js/script.js"></script>
 </body>
+
 </html>

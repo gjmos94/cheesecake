@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Classic Cheesecake — Gourmet Cheesecakes" />
+  <title>Classic Cheesecake | Gourmet Cheesecakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <img src="images/crlogo.png" alt="Gourmet Cheesecakes logo" class="logo">
+      <h1 class="site-title">Gourmet Cheesecakes & Baked Goods</h1>
+    </div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu"></button>
+    <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="banner" aria-hidden="true"></div>
+
+  <main id="main">
+    <section class="item-detail">
+      <h2>Classic Cheesecake</h2>
+  
+      <div class="item-layout">
+        <!-- LEFT: Image gallery -->
+        <div class="item-gallery">
+          <button class="gallery-prev" aria-label="Previous image">&#10094;</button>
+          <img src="images/cheese2.png" alt="Classic Cheesecake front view" class="gallery-image">
+          <button class="gallery-next" aria-label="Next image">&#10095;</button>
+        </div>
+      
+        <!-- RIGHT: Item details -->
+        <div class="item-info">
+          <p>
+            Our Classic Cheesecake is the perfect blend of creamy texture and subtle sweetness.
+            Made with fresh cream cheese, a touch of vanilla, and a buttery graham cracker crust.
+          </p>
+          <p><strong>Price:</strong> $24.99 (8-inch)</p>
+          <button class="btn primary">Order Now</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>&copy; <span id="year"></span> Gourmet Cheesecakes</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

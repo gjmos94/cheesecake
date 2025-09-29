@@ -39,8 +39,8 @@ body{
 }
 .branding{display:flex;align-items:center;gap:.75rem}
 .logo{
-  width:120px;
-  height:120px;
+  width:170px;
+  height:140px;
   border-radius:16px;
   
   display:block;
@@ -58,7 +58,7 @@ body{
   background:transparent;border:none;font-size:1.6rem;cursor:pointer;
 }
 .main-nav ul{display:flex;gap:1.25rem;list-style:none}
-.main-nav a{color:var(--muted);text-decoration:none;font-family:"Playfair Display", serif;font-weight:300;font-size:1rem}
+.main-nav a{color:var(--muted);text-decoration:none;font-family:"Playfair Display", serif;font-weight:300;font-size:1.6rem}
 
 /* Banner (scrolling) */
 .banner{
@@ -147,3 +147,100 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
   .menu-toggle{display:block}
   .main-nav.open{display:block}
 }
+
+/* Flexbox layout for product page */
+.item-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Gallery styles */
+.item-gallery {
+  position: relative;
+  max-width: 700px;  /* control image size */
+}
+
+.item-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Arrows */
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.gallery-prev { left: -15px; }
+.gallery-next { right: -15px; }
+
+/* Details on the right */
+.item-info {
+  flex: 1;
+  max-width: 500px;
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff8f0;
+  border: 1px solid #e0d4c5;
+  border-radius: 8px;
+  padding: 2rem;
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* keep text color */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.menu-info {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.menu-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #5a3825;
+}
+
+.menu-info p {
+  margin: 0;
+  color: #6d5446;
+  font-size: 0.95rem;
+}
+
+.menu-image img {
+  max-width: 250px;
+  border-radius: 4px;
+}
+
