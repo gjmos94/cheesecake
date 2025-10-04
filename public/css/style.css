@@ -113,8 +113,19 @@ body{
 }
 
 /* buttons */
-.btn{font-family:inherit;padding:.6rem 1rem;border-radius:6px;border:none;cursor:pointer}
-.btn.primary{background:var(--btn);color:white}
+.btn{
+  font-family:inherit;
+  padding:.6rem 1rem;
+  border-radius:6px;
+  border:none;
+  cursor:pointer
+}
+.btn.primary{
+  background:var(--btn);
+  color:white;
+}
+
+
 
 /* layout sections */
 section{padding:3.5rem 1rem;text-align:center}
@@ -159,8 +170,8 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 /* Gallery styles */
 .item-gallery {
   position: relative;
-  width: 400px;   /* fixed width */
-  height: 300px;  /* fixed height */
+  width: 600px;   /* fixed width */
+  height: 500px;  /* fixed height */
   overflow: hidden;
   border-radius: 12px;
 }
@@ -202,8 +213,15 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 
 /* Details on the right */
 .item-info {
-  flex: 1;
+  flex: 5;
   max-width: 500px;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.price-text {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Menu Section */
@@ -236,8 +254,9 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 }
 
 .menu-info {
-  flex: 1;
+  flex: 4;
   padding-right: 1rem;
+  padding-top: 2rem;
 }
 
 .menu-info h3 {
@@ -247,7 +266,7 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 }
 
 .menu-info p {
-  margin: 0;
+  margin: 2;
   color: #6d5446;
   font-size: 0.95rem;
 }
