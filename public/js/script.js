@@ -37,4 +37,19 @@ document.addEventListener("DOMContentLoaded", function () {
       showImage(currentIndex);
     });
   }
+
+  // Smooth scroll function
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  // Attach click listener to "See Our Menu" button
+  const menuButton = document.getElementById("see-menu");
+  if (menuButton) {
+    menuButton.addEventListener("click", () => scrollToSection("menu"));
+  }
+
 });

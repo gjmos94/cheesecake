@@ -9,7 +9,10 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+html,body{
+  height:100%;
+  scroll-behavior: smooth;
+}
 body{
   font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background:var(--bg);
@@ -87,8 +90,8 @@ body{
   animation:fadeSlideshow 15s linear infinite;
   will-change:opacity;
 }
-.hero-bg.bg1{background-image:url("../images/cheese1.png");animation-delay:0s}
-.hero-bg.bg2{background-image:url("../images/cheese2.png");animation-delay:5s}
+.hero-bg.bg1{background-image:url("../images/cheesebanner1.jpg");animation-delay:0s}
+.hero-bg.bg2{background-image:url("../images/cheesebanner2.jpg");animation-delay:5s}
 .hero-bg.bg3{background-image:url("../images/cheese3.png");animation-delay:10s}
 
 /* overlay for contrast */
@@ -124,7 +127,6 @@ body{
   background:var(--btn);
   color:white;
 }
-
 
 
 /* layout sections */
@@ -163,15 +165,14 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 .item-layout {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  
 }
 
 /* Gallery styles */
 .item-gallery {
   position: relative;
-  width: 600px;   /* fixed width */
-  height: 500px;  /* fixed height */
+  width: 800px;   /* fixed width */
+  height: 600px;  /* fixed height */
   overflow: hidden;
   border-radius: 12px;
 }
@@ -211,12 +212,18 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 .gallery-prev { left: 10px; }
 .gallery-next { right: 10px; }
 
-/* Details on the right */
+.item-title {
+  padding-left: 55rem;
+}
+
+/* Details on the right $$$$$$$$$$$$$$$$ */
 .item-info {
   flex: 5;
-  max-width: 500px;
+  max-width: 700px;
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
+  padding-left: 3.5rem;
+  font-size: larger;
 }
 
 .price-text {
@@ -230,8 +237,16 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 }
 
 .menu-grid {
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-grid-single {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 700px));
   gap: 1.5rem;
 }
 
@@ -272,7 +287,8 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 }
 
 .menu-image img {
-  max-width: 250px;
+  width: 200px;
+  height:175px;
   border-radius: 4px;
 }
 
