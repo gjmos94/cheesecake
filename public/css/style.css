@@ -40,10 +40,14 @@ body{
   color:var(--muted);
   gap:1rem;
 }
-.branding{display:flex;align-items:center;gap:.75rem}
+.branding{
+  display:flex;
+  align-items:center;
+  gap:.75rem
+}
 .logo{
-  width:170px;
-  height:140px;
+  width:120px;
+  height:90px;
   border-radius:16px;
   
   display:block;
@@ -130,7 +134,7 @@ body{
 
 
 /* layout sections */
-section{padding:3.5rem 1rem;text-align:center}
+section{padding:1.7rem 1rem;text-align:center}
 .menu-grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
 .menu-item{width:260px}
 .menu-item img{width:100%;border-radius:10px;display:block;object-fit:cover}
@@ -171,8 +175,8 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 /* Gallery styles */
 .item-gallery {
   position: relative;
-  width: 800px;   /* fixed width */
-  height: 600px;  /* fixed height */
+  width: 650px;   /* fixed width */
+  height: 450px;  /* fixed height */
   overflow: hidden;
   border-radius: 12px;
 }
@@ -220,7 +224,7 @@ footer{background:#a57224;color:#fff;text-align:center;padding:1rem}
 .item-info {
   flex: 5;
   max-width: 700px;
-  padding-top: 3.5rem;
+  padding-top: 1.7rem;
   padding-bottom: 3.5rem;
   padding-left: 3.5rem;
   font-size: larger;
