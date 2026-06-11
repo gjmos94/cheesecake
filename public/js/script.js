@@ -1,7 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // -------------------------------
-  // Product page image gallery
-  // -------------------------------
+
+  // ── Mobile menu toggle ──────────────────────────────────
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close menu when a nav link is tapped (nice on mobile)
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  }
+
+  // Set hamburger icon initially
+  if (menuToggle) menuToggle.textContent = "☰";
+
+  // ── Product page image gallery ──────────────────────────
   const galleryContainer = document.querySelector(".item-gallery");
   const prevBtn = document.querySelector(".gallery-prev");
   const nextBtn = document.querySelector(".gallery-next");
@@ -10,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let galleryImages = JSON.parse(galleryContainer.dataset.images);
     let currentIndex = 0;
 
-    // Clear container and build all images
-    const imgElements = galleryImages.map((src, i) => {
+    const imgElements = galleryImages.map(function (src, i) {
       const img = document.createElement("img");
       img.src = src;
       img.alt = "Product image " + (i + 1);
@@ -22,34 +44,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function showImage(index) {
-      imgElements.forEach((img, i) => {
+      imgElements.forEach(function (img, i) {
         img.classList.toggle("active", i === index);
       });
     }
 
-    prevBtn.addEventListener("click", () => {
+    prevBtn.addEventListener("click", function () {
       currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
       showImage(currentIndex);
     });
 
-    nextBtn.addEventListener("click", () => {
+    nextBtn.addEventListener("click", function () {
       currentIndex = (currentIndex + 1) % galleryImages.length;
       showImage(currentIndex);
     });
   }
 
-  // Smooth scroll function
-  function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
-  // Attach click listener to "See Our Menu" button
+  // ── "See Our Menu" smooth scroll ────────────────────────
   const menuButton = document.getElementById("see-menu");
   if (menuButton) {
-    menuButton.addEventListener("click", () => scrollToSection("menu"));
+    menuButton.addEventListener("click", function () {
+      const section = document.getElementById("menu");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    });
   }
+
+  // ── Dynamic footer year ──────────────────────────────────
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
